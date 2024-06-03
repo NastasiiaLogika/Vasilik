@@ -48,12 +48,12 @@ def gameLoop(snake_speed=2):
     snake_List = []
     Length_of_snake = 1
 
-    foodx = round(random.randrange(0, dis_width - block_size) / 10.0) * 10.0
-    foody = round(random.randrange(0, dis_height - block_size) / 10.0) * 10.0
+    foodx = round(random.randrange(0, dis_width - block_size) / block_size) * block_size
+    foody = round(random.randrange(0, dis_height - block_size) / block_size) * block_size
 
     while not game_over:
 
-        while game_close == True:
+        while game_close:
             dis.fill(blue)
             message("You Lost! Press Q-Quit or C-Play Again", red)
             pygame.display.update()
@@ -107,8 +107,8 @@ def gameLoop(snake_speed=2):
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
-            foodx = round(random.randrange(0, dis_width - block_size) / 10.0) * 10.0
-            foody = round(random.randrange(0, dis_height - block_size) / 10.0) * 10.0
+            foodx = round(random.randrange(0, dis_width - block_size) / block_size) * block_size
+            foody = round(random.randrange(0, dis_height - block_size) / block_size) * block_size
             Length_of_snake += 1
             snake_speed += 1  # Increase snake speed when eating food
 
